@@ -1,85 +1,80 @@
 <!DOCTYPE html>
 <html lang="nl">
-
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JARVIS OS</title>
 
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>JARVIS OS</title>
-
-<link rel="stylesheet" href="style.css">
-
+  <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
-<div id="backgroundGlow"></div>
+<div id="app">
 
-<header>
+    <header>
+        <h1>J.A.R.V.I.S</h1>
+        <p>Just A Rather Very Intelligent System</p>
+    </header>
 
-<h1>J.A.R.V.I.S</h1>
+    <main>
 
-<p>Just A Rather Very Intelligent System</p>
+        <section id="hud">
 
-</header>
+            <div id="arc-reactor">
 
-<main>
+                <div class="ring ring1"></div>
+                <div class="ring ring2"></div>
+                <div class="ring ring3"></div>
 
-<section id="hud">
+                <div class="core">
+                    ONLINE
+                </div>
 
-<div id="core">
+            </div>
 
-<div class="ring ring1"></div>
-<div class="ring ring2"></div>
-<div class="ring ring3"></div>
+        </section>
 
-<div id="center">
+        <section id="status">
 
-<span>ONLINE</span>
+            <h2>Status</h2>
+
+            <p>System Online</p>
+
+        </section>
+
+        <section id="chat">
+
+            <div class="message">
+
+                Hello Steven...
+
+                Waiting for your command.
+
+            </div>
+
+        </section>
+
+        <section id="controls">
+
+            <button id="micButton">
+
+                🎤 Speak
+
+            </button>
+
+            <button id="developerMode">
+
+                ⚙ Developer Mode
+
+            </button>
+
+        </section>
+
+    </main>
 
 </div>
-
-</div>
-
-</section>
-
-<section id="chat">
-
-<div id="messages">
-
-<div class="jarvis">
-
-Hello Steven...
-
-System online.
-
-</div>
-
-</div>
-
-</section>
-
-<section id="controls">
-
-<button id="micButton">
-
-🎤 Speak
-
-</button>
-
-<button id="developerButton">
-
-⚙ Developer Mode
-
-</button>
-
-</section>
-
-</main>
 
 <script src="script.js"></script>
 
 </body>
-
 </html>
