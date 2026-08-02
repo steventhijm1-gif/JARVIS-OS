@@ -1,17 +1,26 @@
-// ============================
-// JARVIS OS v1.0
-// Core Script
-// ============================
+// ===============================
+// JARVIS OS v1.1
+// Main Script
+// ===============================
 
 console.log("JARVIS OS gestart.");
 
 const micButton = document.getElementById("micButton");
 const developerButton = document.getElementById("developerMode");
+const chatBox = document.querySelector(".message");
+
+function jarvisSay(text) {
+    chatBox.innerHTML = `<strong>JARVIS:</strong><br>${text}`;
+}
 
 micButton.addEventListener("click", () => {
-    alert("🎤 Voice System komt in versie 2.");
+    jarvisSay("🎤 Voice System wordt voorbereid...");
 });
 
 developerButton.addEventListener("click", () => {
-    alert("⚙️ Developer Mode komt binnenkort.");
+    jarvisSay("⚙️ Developer Mode wordt geladen...");
 });
+
+window.onload = () => {
+    jarvisSay("Hallo Steven.<br><br>JARVIS is online en wacht op je commando.");
+};
