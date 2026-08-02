@@ -2,3 +2,45 @@ chat.js
 voice.js
 developer.js
 plugins.js
+/*
+==========================================
+JARVIS OS
+Module: Chat
+Version: 1.0
+==========================================
+*/
+
+class JarvisChat {
+    constructor() {
+        this.messages = [];
+    }
+
+    addMessage(sender, text) {
+        const message = {
+            sender,
+            text,
+            time: new Date()
+        };
+
+        this.messages.push(message);
+
+        console.log(
+            `[${sender}] ${text}`
+        );
+    }
+
+    getHistory() {
+        return this.messages;
+    }
+
+    clearHistory() {
+        this.messages = [];
+    }
+}
+
+const jarvisChat = new JarvisChat();
+
+jarvisChat.addMessage(
+    "JARVIS",
+    "Chat module loaded."
+);
