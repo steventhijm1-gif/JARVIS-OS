@@ -36,3 +36,95 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
 });
+// ==========================================
+// JARVIS Command Engine (Basis)
+// ==========================================
+
+let jarvisAwake = false;
+
+document.addEventListener("keydown", (event) => {
+
+    // Tijdelijke test (later wordt dit spraak)
+    if (event.key.toLowerCase() === "j") {
+
+        jarvisAwake = true;
+
+        statusText.textContent = "Listening...";
+
+        const reactor = document.getElementById("arc-reactor");
+
+        reactor.animate([
+            { transform: "scale(1)" },
+            { transform: "scale(1.12)" },
+            { transform: "scale(1)" }
+        ], {
+            duration: 600
+        });
+
+        setTimeout(() => {
+            statusText.textContent = "Ja Steven?";
+        }, 700);
+
+    }
+   // ==========================================
+// JARVIS Command Engine (Basis)
+// ==========================================
+
+let jarvisAwake = false;
+
+document.addEventListener("keydown", (event) => {
+
+    // Tijdelijke test (later wordt dit spraak)
+    if (event.key.toLowerCase() === "j") {
+
+        jarvisAwake = true;
+
+        statusText.textContent = "Listening...";
+
+        const reactor = document.getElementById("arc-reactor");
+
+        reactor.animate([
+            { transform: "scale(1)" },
+            { transform: "scale(1.12)" },
+            { transform: "scale(1)" }
+        ], {
+            duration: 600
+        });
+
+        setTimeout(() => {
+            statusText.textContent = "Ja Steven?";
+        }, 700);
+
+    }
+// ==========================================
+// JARVIS Command Engine (Basis)
+// ==========================================
+
+let jarvisAwake = false;
+
+document.addEventListener("keydown", (event) => {
+
+    // Tijdelijke test (later wordt dit spraak)
+    if (event.key.toLowerCase() === "j") {
+
+        jarvisAwake = true;
+
+        statusText.textContent = "Listening...";
+
+        const reactor = document.getElementById("arc-reactor");
+
+        reactor.animate([
+            { transform: "scale(1)" },
+            { transform: "scale(1.12)" },
+            { transform: "scale(1)" }
+        ], {
+            duration: 600
+        });
+
+        setTimeout(() => {
+            statusText.textContent = "Ja Steven?";
+        }, 700);
+
+    }
+
+});
