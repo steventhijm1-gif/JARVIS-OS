@@ -1,1 +1,227 @@
-alert("JARVIS script werkt!");
+/* ==========================================
+   JARVIS OS Build 1.0
+========================================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    background:#05070d;
+    overflow:hidden;
+    color:#c8f8ff;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+/* Achtergrond */
+
+#background-grid{
+
+    position:fixed;
+    inset:0;
+
+    background:
+    radial-gradient(circle at center,#0b1730 0%,#05070d 70%);
+
+}
+
+/* Opstartscherm */
+
+#startup-screen{
+
+    position:absolute;
+
+    top:50%;
+    left:50%;
+
+    transform:translate(-50%,-50%);
+
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+
+}
+
+/* Arc Reactor */
+
+#arc-reactor{
+
+    position:relative;
+
+    width:280px;
+    height:280px;
+
+    margin-bottom:40px;
+
+}
+
+/* Ringen */
+
+.ring{
+
+    position:absolute;
+
+    border-radius:50%;
+
+    border:3px solid #23dfff;
+
+    box-shadow:
+    0 0 10px #00dfff,
+    0 0 30px #00dfff,
+    inset 0 0 20px #00dfff;
+
+}
+
+.outer{
+
+    width:280px;
+    height:280px;
+
+    animation:spinClockwise 16s linear infinite;
+
+}
+
+.middle{
+
+    width:210px;
+    height:210px;
+
+    left:35px;
+    top:35px;
+
+    animation:spinReverse 10s linear infinite;
+
+}
+
+.inner{
+
+    width:140px;
+    height:140px;
+
+    left:70px;
+    top:70px;
+
+    animation:spinClockwise 5s linear infinite;
+
+}
+
+/* Kern */
+
+.core-glow{
+
+    position:absolute;
+
+    width:110px;
+    height:110px;
+
+    left:85px;
+    top:85px;
+
+    border-radius:50%;
+
+    background:#00dfff33;
+
+    filter:blur(18px);
+
+}
+
+.core{
+
+    position:absolute;
+
+    width:70px;
+    height:70px;
+
+    left:105px;
+    top:105px;
+
+    border-radius:50%;
+
+    background:#bffcff;
+
+    box-shadow:
+    0 0 20px #00dfff,
+    0 0 50px #00dfff,
+    0 0 90px #00dfff;
+
+}
+
+/* Tekst */
+
+#jarvis-title{
+
+    letter-spacing:12px;
+
+    color:#7eeeff;
+
+    margin-bottom:18px;
+
+    text-shadow:
+    0 0 20px #00dfff;
+
+}
+
+#statusText{
+
+    color:#7eeeff;
+
+    letter-spacing:4px;
+
+    opacity:.8;
+
+    animation:pulse 2s infinite;
+
+}
+
+/* Verborgen onderdelen */
+
+#workspace,
+#control-panel{
+
+    display:none;
+
+}
+
+/* Animaties */
+
+@keyframes spinClockwise{
+
+    from{
+        transform:rotate(0deg);
+    }
+
+    to{
+        transform:rotate(360deg);
+    }
+
+}
+
+@keyframes spinReverse{
+
+    from{
+        transform:rotate(360deg);
+    }
+
+    to{
+        transform:rotate(0deg);
+    }
+
+}
+
+@keyframes pulse{
+
+    0%{
+        opacity:.4;
+    }
+
+    50%{
+        opacity:1;
+    }
+
+    100%{
+        opacity:.4;
+    }
+
+}
