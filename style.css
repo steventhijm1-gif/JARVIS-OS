@@ -1,5 +1,5 @@
 /* ==========================================
-   JARVIS OS Build 1.0
+   JARVIS OS Build 2.0
 ========================================== */
 
 *{
@@ -9,27 +9,56 @@
 }
 
 body{
-    background:#05070d;
+
+    background:#030814;
     overflow:hidden;
-    color:#c8f8ff;
+    color:#bff7ff;
     font-family:Arial, Helvetica, sans-serif;
+
 }
 
-/* Achtergrond */
+/* ==========================
+   Achtergrond
+========================== */
 
-#background-grid{
+#background{
 
     position:fixed;
     inset:0;
 
     background:
-    radial-gradient(circle at center,#0b1730 0%,#05070d 70%);
+    radial-gradient(circle at center,#102244 0%,#071120 35%,#020611 100%);
 
 }
 
-/* Opstartscherm */
+/* ==========================
+   Scanlijnen
+========================== */
 
-#startup-screen{
+#scanlines{
+
+    position:fixed;
+    inset:0;
+
+    pointer-events:none;
+
+    opacity:.05;
+
+    background:
+    repeating-linear-gradient(
+        to bottom,
+        transparent 0px,
+        transparent 3px,
+        white 4px
+    );
+
+}
+
+/* ==========================
+   HUD
+========================== */
+
+#hud{
 
     position:absolute;
 
@@ -40,24 +69,25 @@ body{
 
     display:flex;
     flex-direction:column;
+
     align-items:center;
 
 }
 
-/* Arc Reactor */
+/* ==========================
+   Arc Reactor
+========================== */
 
 #arc-reactor{
 
     position:relative;
 
-    width:280px;
-    height:280px;
+    width:300px;
+    height:300px;
 
     margin-bottom:40px;
 
 }
-
-/* Ringen */
 
 .ring{
 
@@ -65,33 +95,34 @@ body{
 
     border-radius:50%;
 
-    border:3px solid #23dfff;
+    border:3px solid #00dfff;
 
     box-shadow:
-    0 0 10px #00dfff,
-    0 0 30px #00dfff,
-    inset 0 0 20px #00dfff;
+
+        0 0 15px #00dfff,
+        0 0 35px #00dfff,
+        inset 0 0 20px #00dfff;
 
 }
 
 .outer{
 
-    width:280px;
-    height:280px;
+    width:300px;
+    height:300px;
 
-    animation:spinClockwise 16s linear infinite;
+    animation:spin 18s linear infinite;
 
 }
 
 .middle{
 
-    width:210px;
-    height:210px;
+    width:220px;
+    height:220px;
 
-    left:35px;
-    top:35px;
+    left:40px;
+    top:40px;
 
-    animation:spinReverse 10s linear infinite;
+    animation:spinReverse 12s linear infinite;
 
 }
 
@@ -100,30 +131,28 @@ body{
     width:140px;
     height:140px;
 
-    left:70px;
-    top:70px;
+    left:80px;
+    top:80px;
 
-    animation:spinClockwise 5s linear infinite;
+    animation:spin 7s linear infinite;
 
 }
 
-/* Kern */
-
-.core-glow{
+.coreGlow{
 
     position:absolute;
 
-    width:110px;
-    height:110px;
+    width:120px;
+    height:120px;
 
-    left:85px;
-    top:85px;
+    top:90px;
+    left:90px;
 
     border-radius:50%;
 
-    background:#00dfff33;
+    background:#00dfff55;
 
-    filter:blur(18px);
+    filter:blur(20px);
 
 }
 
@@ -131,62 +160,84 @@ body{
 
     position:absolute;
 
-    width:70px;
-    height:70px;
+    width:80px;
+    height:80px;
 
-    left:105px;
-    top:105px;
+    top:110px;
+    left:110px;
 
     border-radius:50%;
 
-    background:#bffcff;
+    background:#c7ffff;
 
     box-shadow:
-    0 0 20px #00dfff,
-    0 0 50px #00dfff,
-    0 0 90px #00dfff;
+
+        0 0 20px #00dfff,
+        0 0 45px #00dfff,
+        0 0 90px #00dfff;
 
 }
 
-/* Tekst */
+/* ==========================
+   Tekst
+========================== */
 
-#jarvis-title{
+h1{
+
+    font-size:60px;
 
     letter-spacing:12px;
 
-    color:#7eeeff;
-
-    margin-bottom:18px;
+    color:#84eeff;
 
     text-shadow:
-    0 0 20px #00dfff;
+        0 0 15px #00dfff;
 
 }
 
 #statusText{
 
-    color:#7eeeff;
+    margin-top:15px;
 
     letter-spacing:4px;
 
-    opacity:.8;
+    font-size:18px;
 
     animation:pulse 2s infinite;
 
 }
 
-/* Verborgen onderdelen */
+#systemInfo{
+
+    margin-top:35px;
+
+    text-align:center;
+
+    color:#70dfff;
+
+    line-height:28px;
+
+    opacity:.85;
+
+}
+
+/* ==========================
+   Verborgen onderdelen
+========================== */
 
 #workspace,
-#control-panel{
+#windows,
+#commandBar{
 
     display:none;
 
 }
 
-/* Animaties */
+/* ==========================
+   Animaties
+========================== */
 
-@keyframes spinClockwise{
+@keyframes spin{
 
     from{
         transform:rotate(0deg);
@@ -223,52 +274,5 @@ body{
     100%{
         opacity:.4;
     }
-
-}
- 
-/* ==========================================
-   Command Bar
-========================================== */
-
-#command-bar{
-
-    position:fixed;
-
-    bottom:30px;
-
-    left:50%;
-
-    transform:translateX(-50%);
-
-    display:none;
-
-}
-
-#commandInput{
-
-    width:500px;
-
-    padding:16px 22px;
-
-    background:#08131f;
-
-    border:2px solid #00dfff;
-
-    color:#bdf8ff;
-
-    font-size:18px;
-
-    border-radius:12px;
-
-    outline:none;
-
-    box-shadow:
-        0 0 20px #00dfff44;
-
-}
-
-#commandInput::placeholder{
-
-    color:#66cfe0;
 
 }
