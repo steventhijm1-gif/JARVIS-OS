@@ -1,26 +1,14 @@
-// ===============================
-// JARVIS OS v1.1
-// Main Script
-// ===============================
+// ==========================================
+// JARVIS Build 002
+// Startup Sequence
+// ==========================================
 
-console.log("JARVIS OS gestart.");
+window.addEventListener("load", () => {
 
-const micButton = document.getElementById("micButton");
-const developerButton = document.getElementById("developerMode");
-const chatBox = document.querySelector(".message");
+    const status = document.getElementById("statusText");
 
-function jarvisSay(text) {
-    chatBox.innerHTML = `<strong>JARVIS:</strong><br>${text}`;
-}
+    setTimeout(() => {
+        status.textContent = "Awaiting command...";
+    }, 2500);
 
-micButton.addEventListener("click", () => {
-    jarvisSay("🎤 Voice System wordt voorbereid...");
 });
-
-developerButton.addEventListener("click", () => {
-    jarvisSay("⚙️ Developer Mode wordt geladen...");
-});
-
-window.onload = () => {
-    jarvisSay("Hallo Steven.<br><br>JARVIS is online en wacht op je commando.");
-};
