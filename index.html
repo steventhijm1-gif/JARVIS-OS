@@ -13,10 +13,13 @@
 <body>
 
     <!-- Achtergrond -->
-    <div id="background-grid"></div>
+    <div id="background"></div>
 
-    <!-- Opstartscherm -->
-    <main id="startup-screen">
+    <!-- Scanlijnen -->
+    <div id="scanlines"></div>
+
+    <!-- HUD -->
+    <div id="hud">
 
         <!-- Arc Reactor -->
         <div id="arc-reactor">
@@ -25,35 +28,45 @@
             <div class="ring middle"></div>
             <div class="ring inner"></div>
 
-            <div class="core-glow"></div>
+            <div class="coreGlow"></div>
             <div class="core"></div>
 
         </div>
 
         <!-- Titel -->
-        <h1 id="jarvis-title">JARVIS</h1>
+        <h1>JARVIS</h1>
 
         <!-- Status -->
         <p id="statusText">Initializing...</p>
 
-    </main>
+        <!-- Kleine systeeminformatie -->
+        <div id="systemInfo">
+
+            <p>AI CORE : ONLINE</p>
+            <p>VOICE : STANDBY</p>
+            <p>STATUS : READY</p>
+
+        </div>
+
+    </div>
 
     <!-- Hier komen later de holografische vensters -->
     <div id="workspace"></div>
 
-    <!-- Hier komt later het bedieningspaneel -->
-    <div id="control-panel"></div>
-<!-- Command Bar -->
-<div id="command-bar">
+    <!-- Hier komen later AI-vensters -->
+    <div id="windows"></div>
 
-    <input
-        type="text"
-        id="commandInput"
-        placeholder="Type een opdracht..."
-        autocomplete="off"
-    >
+    <!-- Command Bar (verborgen) -->
+    <div id="commandBar">
 
-</div>
+        <input
+            id="commandInput"
+            type="text"
+            placeholder="Type een opdracht..."
+            autocomplete="off">
+
+    </div>
+
     <script src="script.js"></script>
 
 </body>
