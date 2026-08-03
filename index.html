@@ -1,37 +1,51 @@
 <!DOCTYPE html>
 <html lang="nl">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>JARVIS OS</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <link rel="stylesheet" href="style.css">
+    <title>JARVIS OS</title>
+
+    <link rel="stylesheet" href="style.css">
 </head>
-<body>
+
 <body>
 
-    <div id="jarvis-startup">
+    <!-- Achtergrond -->
+    <div id="background-grid"></div>
 
+    <!-- Opstartscherm -->
+    <main id="startup-screen">
+
+        <!-- Arc Reactor -->
         <div id="arc-reactor">
 
-            <div class="ring ring1"></div>
-            <div class="ring ring2"></div>
-            <div class="ring ring3"></div>
+            <div class="ring outer"></div>
+            <div class="ring middle"></div>
+            <div class="ring inner"></div>
 
+            <div class="core-glow"></div>
             <div class="core"></div>
 
         </div>
 
-        <h1>JARVIS</h1>
+        <!-- Titel -->
+        <h1 id="jarvis-title">JARVIS</h1>
 
+        <!-- Status -->
         <p id="statusText">Initializing...</p>
 
-    </div>
+    </main>
+
+    <!-- Hier komen later de holografische vensters -->
+    <div id="workspace"></div>
+
+    <!-- Hier komt later het bedieningspaneel -->
+    <div id="control-panel"></div>
 
     <script src="script.js"></script>
 
 </body>
 
-     
-           
-
+</html>
