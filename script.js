@@ -69,4 +69,55 @@ document.addEventListener("DOMContentLoaded", () => {
 
     });
 
+});// ==========================
+// Command Bar
+// ==========================
+
+const commandBar = document.getElementById("command-bar");
+const commandInput = document.getElementById("commandInput");
+
+document.addEventListener("keydown", (event) => {
+
+    if (event.key === "Enter") {
+
+        commandBar.style.display = "block";
+
+        commandInput.focus();
+
+    }
+
+});
+
+commandInput.addEventListener("keydown", (event) => {
+
+    if (event.key !== "Enter") return;
+
+    const command = commandInput.value.toLowerCase().trim();
+
+    if(command === "open youtube"){
+
+        statusText.textContent = "Opening YouTube...";
+
+    }
+
+    else if(command === "open camera"){
+
+        statusText.textContent = "Opening Camera...";
+
+    }
+
+    else if(command === "toon bedieningspaneel"){
+
+        statusText.textContent = "Opening Control Panel...";
+
+    }
+
+    else{
+
+        statusText.textContent = "Unknown command";
+
+    }
+
+    commandInput.value = "";
+
 });
