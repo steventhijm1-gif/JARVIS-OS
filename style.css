@@ -226,3 +226,49 @@ body{
 
 }
  
+/* ==========================================
+   Command Bar
+========================================== */
+
+#command-bar{
+
+    position:fixed;
+
+    bottom:30px;
+
+    left:50%;
+
+    transform:translateX(-50%);
+
+    display:none;
+
+}
+
+#commandInput{
+
+    width:500px;
+
+    padding:16px 22px;
+
+    background:#08131f;
+
+    border:2px solid #00dfff;
+
+    color:#bdf8ff;
+
+    font-size:18px;
+
+    border-radius:12px;
+
+    outline:none;
+
+    box-shadow:
+        0 0 20px #00dfff44;
+
+}
+
+#commandInput::placeholder{
+
+    color:#66cfe0;
+
+}
