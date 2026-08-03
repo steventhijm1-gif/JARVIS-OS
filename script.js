@@ -1,123 +1,278 @@
 /* ==========================================
-   JARVIS OS Build 1.0
+   JARVIS OS Build 2.0
 ========================================== */
 
-document.addEventListener("DOMContentLoaded", () => {
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
 
-    const statusText = document.getElementById("statusText");
-    const reactor = document.getElementById("arc-reactor");
+body{
 
-    let jarvisAwake = false;
+    background:#030814;
+    overflow:hidden;
+    color:#bff7ff;
+    font-family:Arial, Helvetica, sans-serif;
 
-    // ==========================
-    // Startup Sequence
-    // ==========================
+}
 
-    setTimeout(() => {
-        statusText.textContent = "Loading AI Core...";
-    }, 1500);
+/* ==========================
+   Achtergrond
+========================== */
 
-    setTimeout(() => {
-        statusText.textContent = "Connecting Systems...";
-    }, 3000);
+#background{
 
-    setTimeout(() => {
-        statusText.textContent = "Awaiting command...";
-    }, 5000);
+    position:fixed;
+    inset:0;
 
-    // ==========================
-    // Reactor Click Animation
-    // ==========================
+    background:
+    radial-gradient(circle at center,#102244 0%,#071120 35%,#020611 100%);
 
-    reactor.addEventListener("click", () => {
+}
 
-        reactor.animate([
-            { transform: "scale(1)" },
-            { transform: "scale(1.08)" },
-            { transform: "scale(1)" }
-        ], {
-            duration: 400
-        });
+/* ==========================
+   Scanlijnen
+========================== */
 
-    });
+#scanlines{
 
-    // ==========================
-    // Test Wake Word (J)
-    // ==========================
+    position:fixed;
+    inset:0;
 
-    document.addEventListener("keydown", (event) => {
+    pointer-events:none;
 
-        if (event.key.toLowerCase() === "j") {
+    opacity:.05;
 
-            jarvisAwake = true;
+    background:
+    repeating-linear-gradient(
+        to bottom,
+        transparent 0px,
+        transparent 3px,
+        white 4px
+    );
 
-            statusText.textContent = "Listening...";
+}
 
-            reactor.animate([
-                { transform: "scale(1)" },
-                { transform: "scale(1.12)" },
-                { transform: "scale(1)" }
-            ], {
-                duration: 600
-            });
+/* ==========================
+   HUD
+========================== */
 
-            setTimeout(() => {
-                statusText.textContent = "Ja Steven?";
-            }, 700);
+#hud{
 
-        }
+    position:absolute;
 
-    });
+    top:50%;
+    left:50%;
 
-});// ==========================
-// Command Bar
-// ==========================
+    transform:translate(-50%,-50%);
 
-const commandBar = document.getElementById("command-bar");
-const commandInput = document.getElementById("commandInput");
+    display:flex;
+    flex-direction:column;
 
-document.addEventListener("keydown", (event) => {
+    align-items:center;
 
-    if (event.key === "Enter") {
+}
 
-        commandBar.style.display = "block";
+/* ==========================
+   Arc Reactor
+========================== */
 
-        commandInput.focus();
+#arc-reactor{
 
+    position:relative;
+
+    width:300px;
+    height:300px;
+
+    margin-bottom:40px;
+
+}
+
+.ring{
+
+    position:absolute;
+
+    border-radius:50%;
+
+    border:3px solid #00dfff;
+
+    box-shadow:
+
+        0 0 15px #00dfff,
+        0 0 35px #00dfff,
+        inset 0 0 20px #00dfff;
+
+}
+
+.outer{
+
+    width:300px;
+    height:300px;
+
+    animation:spin 18s linear infinite;
+
+}
+
+.middle{
+
+    width:220px;
+    height:220px;
+
+    left:40px;
+    top:40px;
+
+    animation:spinReverse 12s linear infinite;
+
+}
+
+.inner{
+
+    width:140px;
+    height:140px;
+
+    left:80px;
+    top:80px;
+
+    animation:spin 7s linear infinite;
+
+}
+
+.coreGlow{
+
+    position:absolute;
+
+    width:120px;
+    height:120px;
+
+    top:90px;
+    left:90px;
+
+    border-radius:50%;
+
+    background:#00dfff55;
+
+    filter:blur(20px);
+
+}
+
+.core{
+
+    position:absolute;
+
+    width:80px;
+    height:80px;
+
+    top:110px;
+    left:110px;
+
+    border-radius:50%;
+
+    background:#c7ffff;
+
+    box-shadow:
+
+        0 0 20px #00dfff,
+        0 0 45px #00dfff,
+        0 0 90px #00dfff;
+
+}
+
+/* ==========================
+   Tekst
+========================== */
+
+h1{
+
+    font-size:60px;
+
+    letter-spacing:12px;
+
+    color:#84eeff;
+
+    text-shadow:
+        0 0 15px #00dfff;
+
+}
+
+#statusText{
+
+    margin-top:15px;
+
+    letter-spacing:4px;
+
+    font-size:18px;
+
+    animation:pulse 2s infinite;
+
+}
+
+#systemInfo{
+
+    margin-top:35px;
+
+    text-align:center;
+
+    color:#70dfff;
+
+    line-height:28px;
+
+    opacity:.85;
+
+}
+
+/* ==========================
+   Verborgen onderdelen
+========================== */
+
+#workspace,
+#windows,
+#commandBar{
+
+    display:none;
+
+}
+
+/* ==========================
+   Animaties
+========================== */
+
+@keyframes spin{
+
+    from{
+        transform:rotate(0deg);
     }
 
-});
-
-commandInput.addEventListener("keydown", (event) => {
-
-    if (event.key !== "Enter") return;
-
-    const command = commandInput.value.toLowerCase().trim();
-
-    if(command === "open youtube"){
-
-        statusText.textContent = "Opening YouTube...";
-
+    to{
+        transform:rotate(360deg);
     }
 
-    else if(command === "open camera"){
+}
 
-        statusText.textContent = "Opening Camera...";
+@keyframes spinReverse{
 
+    from{
+        transform:rotate(360deg);
     }
 
-    else if(command === "toon bedieningspaneel"){
-
-        statusText.textContent = "Opening Control Panel...";
-
+    to{
+        transform:rotate(0deg);
     }
 
-    else{
+}
 
-        statusText.textContent = "Unknown command";
+@keyframes pulse{
 
+    0%{
+        opacity:.4;
     }
 
-    commandInput.value = "";
+    50%{
+        opacity:1;
+    }
 
-});
+    100%{
+        opacity:.4;
+    }
+
+}
