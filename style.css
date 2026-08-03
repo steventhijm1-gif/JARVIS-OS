@@ -146,3 +146,105 @@ developerButton.addEventListener("click", () => {
 window.onload = () => {
     jarvisSay("Hallo Steven.<br><br>JARVIS is online en wacht op je commando.");
 };
+/* ==========================================
+   JARVIS Build 002 - Arc Reactor
+========================================== */
+
+body{
+    margin:0;
+    background:#02040a;
+    color:white;
+    font-family:Arial, Helvetica, sans-serif;
+    overflow:hidden;
+}
+
+#jarvis-startup{
+    height:100vh;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+}
+
+#arc-reactor{
+    position:relative;
+    width:260px;
+    height:260px;
+    margin-bottom:35px;
+}
+
+.ring{
+    position:absolute;
+    border-radius:50%;
+    border:3px solid #00d9ff;
+    box-shadow:
+        0 0 10px #00d9ff,
+        0 0 30px #00d9ff,
+        inset 0 0 20px #00d9ff;
+}
+
+.ring1{
+    width:260px;
+    height:260px;
+    animation:spin1 12s linear infinite;
+}
+
+.ring2{
+    width:200px;
+    height:200px;
+    top:30px;
+    left:30px;
+    animation:spin2 8s linear infinite reverse;
+}
+
+.ring3{
+    width:140px;
+    height:140px;
+    top:60px;
+    left:60px;
+    animation:spin1 5s linear infinite;
+}
+
+.core{
+    position:absolute;
+    width:70px;
+    height:70px;
+    border-radius:50%;
+    background:#7cefff;
+    top:95px;
+    left:95px;
+
+    box-shadow:
+        0 0 20px #00d9ff,
+        0 0 50px #00d9ff,
+        0 0 90px #00d9ff;
+}
+
+h1{
+    letter-spacing:10px;
+    color:#8ceeff;
+    text-shadow:0 0 20px #00d9ff;
+}
+
+#statusText{
+    color:#5fdfff;
+    font-size:18px;
+    letter-spacing:2px;
+    animation:pulse 2s infinite;
+}
+
+@keyframes spin1{
+    from{transform:rotate(0deg);}
+    to{transform:rotate(360deg);}
+}
+
+@keyframes spin2{
+    from{transform:rotate(360deg);}
+    to{transform:rotate(0deg);}
+}
+
+@keyframes pulse{
+    0%{opacity:.4;}
+    50%{opacity:1;}
+    100%{opacity:.4;}
+}
