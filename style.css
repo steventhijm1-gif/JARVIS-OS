@@ -271,3 +271,46 @@ h1{
     }
 
 }
+/* Command Bar */
+
+#commandBar{
+
+    position:fixed;
+
+    bottom:40px;
+    left:50%;
+
+    transform:translateX(-50%);
+
+    display:none;
+
+}
+
+#commandInput{
+
+    width:500px;
+
+    padding:18px;
+
+    font-size:20px;
+
+    background:#071522;
+
+    border:2px solid #00dfff;
+
+    color:#8ceeff;
+
+    border-radius:12px;
+
+    outline:none;
+
+    box-shadow:
+        0 0 15px #00dfff;
+
+}
+
+#commandInput::placeholder{
+
+    color:#4ebed5;
+
+}
