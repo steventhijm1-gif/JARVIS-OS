@@ -19,9 +19,9 @@ document.addEventListener("DOMContentLoaded", () => {
         statusText.textContent = "Awaiting command...";
     }, 5000);
 
+    // Activeer JARVIS met J
     document.addEventListener("keydown", (event) => {
 
-        // Activeer JARVIS
         if (event.key.toLowerCase() === "j") {
 
             reactor.animate([
@@ -40,19 +40,18 @@ document.addEventListener("DOMContentLoaded", () => {
 
     });
 
+    // Verwerk commando's
     commandInput.addEventListener("keydown", (e) => {
 
         if (e.key === "Enter") {
 
             const command = commandInput.value.toLowerCase();
 
-           if (command === "youtube") {
+            if (command === "youtube") {
 
-    statusText.textContent = "Opening YouTube...";
+                statusText.textContent = "Opening YouTube...";
+                document.getElementById("youtubeWindow").style.display = "block";
 
-    document.getElementById("youtubeWindow").style.display = "block";
-
-}
             } else if (command === "camera") {
 
                 statusText.textContent = "Opening Camera...";
@@ -69,9 +68,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
     });
 
-});
-document.getElementById("closeYoutube").addEventListener("click",()=>{
+    // Sluit YouTube
+    document.getElementById("closeYoutube").addEventListener("click", () => {
 
-    document.getElementById("youtubeWindow").style.display="none";
+        document.getElementById("youtubeWindow").style.display = "none";
+
+    });
 
 });
