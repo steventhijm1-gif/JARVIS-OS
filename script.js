@@ -46,10 +46,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
             const command = commandInput.value.toLowerCase();
 
-            if (command === "youtube") {
+           if (command === "youtube") {
 
-                statusText.textContent = "Opening YouTube...";
+    statusText.textContent = "Opening YouTube...";
 
+    document.getElementById("youtubeWindow").style.display = "block";
+
+}
             } else if (command === "camera") {
 
                 statusText.textContent = "Opening Camera...";
