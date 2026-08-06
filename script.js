@@ -70,3 +70,8 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
 });
+document.getElementById("closeYoutube").addEventListener("click",()=>{
+
+    document.getElementById("youtubeWindow").style.display="none";
+
+});
